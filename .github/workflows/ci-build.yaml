@@ -60,15 +60,15 @@ jobs:
         run: echo "IMAGE_TAG=$(date +%d-%m-%Y.%H%M)" >> $GITHUB_ENV
 
       # Replace tokens in Dockerfile
-      - uses: cschleiden/replace-tokens@v1
-        with:
-          tokenPrefix: '__'
-          tokenSuffix: '__'
-          files: '["**/Dockerfile"]'
-        env:
-          SP_AZURE_TENANT_ID: ${{ secrets.SP_AZURE_TENANT_ID }}
-          SP_AZURE_CLIENT_ID: ${{ secrets.SP_AZURE_CLIENT_ID }}
-          SP_AZURE_CLIENT_SECRET: ${{ secrets.SP_AZURE_CLIENT_SECRET }}  
+      # - uses: cschleiden/replace-tokens@v1
+      #   with:
+      #     tokenPrefix: '__'
+      #     tokenSuffix: '__'
+      #     files: '["**/Dockerfile"]'
+      #   env:
+      #     SP_AZURE_TENANT_ID: ${{ secrets.SP_AZURE_TENANT_ID }}
+      #     SP_AZURE_CLIENT_ID: ${{ secrets.SP_AZURE_CLIENT_ID }}
+      #     SP_AZURE_CLIENT_SECRET: ${{ secrets.SP_AZURE_CLIENT_SECRET }}  
       - name: 'Build and push image'
         uses: azure/docker-login@v1
         with:
