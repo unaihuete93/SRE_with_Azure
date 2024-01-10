@@ -25,10 +25,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 var endpoint="https://srewithazureappconfig.azconfig.io";                     
 builder.Configuration.AddAzureAppConfiguration(options =>
-                    options.Connect(new Uri(endpoint), new DefaultAzureCredential())
+                    options.Connect(new Uri(endpoint), new ManagedIdentityCredential())
                         .ConfigureKeyVault(kv =>
                         {
-                            kv.SetCredential(new DefaultAzureCredential());
+                            kv.SetCredential(new ManagedIdentityCredential());
                         })
                         .ConfigureRefresh(refresh =>
                         {
