@@ -1,3 +1,6 @@
+# Updated version of the repository
+Found at https://github.com/unaihuete93/SRE_with_Azure_v2
+
 # Notes from Unai - SRE Book
 The following repo is used as a demo in the book **The Art of Site Reliability Engineering (SRE) with Azure**
 
